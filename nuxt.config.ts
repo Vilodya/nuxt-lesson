@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "Some Title", // default fallback title
+      title: "Some Title",
       htmlAttrs: {
         lang: "en",
       },
@@ -12,4 +12,11 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
+  routeRules: {
+    "/posts": { ssr: false },
+  },
+
+  devServer: {
+    port: 3001,
+  },
 });
